@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f8fc" />
+  <meta name="description" content="Üniversite öğrencileri için kampüs içi ikinci el alışveriş ve takas platformu." />
+  <title>Kampüs — Öğrenciler arasında akıllı alışveriş</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement"><span class="announcement-dot"></span> Kampüsünde bul, kampüsünde teslim al <span class="announcement-separator">•</span> Kargo yok, beklemek yok.</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Kampüs ana sayfa"><span class="brand-mark">k.</span><span>kampüs<span class="brand-period">.</span></span></a>
+    <nav class="main-nav" aria-label="Ana menü">
+      <a class="nav-link active" href="#kesfet">Keşfet</a>
+      <a class="nav-link" href="#kategoriler">Kategoriler</a>
+      <a class="nav-link" href="#takas">Takas alanı</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button saved-shortcut" id="savedShortcut" aria-label="Kaydedilen ilanlar" title="Kaydedilenler">♡ <span class="saved-count" id="savedCount">0</span></button>
+      <button class="button button-quiet" id="loginButton">Giriş yap</button>
+      <button class="button button-primary" id="sellButton"><span class="button-plus">＋</span> İlan ver</button>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Menüyü aç">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="kesfet">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-spark">✳</span> ÖĞRENCİDEN ÖĞRENCİYE</div>
+        <h1>İhtiyacın olan<br />kampüsünde <span class="highlight-word">seni bekliyor.</span></h1>
+        <p class="hero-description">Kitabını, teknolojini veya artık kullanmadığın eşyalarını kendi kampüsündeki öğrencilerle buluştur. Daha kolay, daha hesaplı, daha yakın.</p>
+        <div class="hero-search">
+          <span class="search-symbol">⌕</span>
+          <input id="searchInput" type="search" placeholder="Kitap, kulaklık, hesap makinesi..." aria-label="İlanlarda ara" />
+          <button id="searchButton" class="search-submit">İlan ara <span>↗</span></button>
+        </div>
+        <div class="hero-trust"><span class="avatar-stack"><i>AY</i><i>MK</i><i>ED</i></span><span><strong>Öğrenci topluluğu için tasarlandı</strong><br />Kampüs içi buluşma, elden teslim.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Kampüs alışverişini temsil eden illüstrasyon">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="floating-note note-left"><span class="note-icon note-green">↗</span><span><b>Yeni bir sahibini bul</b><small>Kullan, paylaş, değerlendir.</small></span></div>
+        <div class="hero-product product-book"><div class="book-cover"><span>ANATOMY</span><b>ATLAS</b><small>Human body · Vol. 01</small><div class="book-line"></div><div class="book-circle"></div></div><span class="product-caption">Ders & Akademi</span></div>
+        <div class="hero-product product-headphones"><div class="headphone-art"><div class="headband"></div><div class="earcup earcup-left"></div><div class="earcup earcup-right"></div></div><span class="product-caption">Teknoloji</span></div>
+        <div class="hero-product product-lamp"><div class="lamp-shade"></div><div class="lamp-neck"></div><div class="lamp-base"></div></div>
+        <div class="floating-note note-right"><span class="note-icon note-purple">♡</span><span><b>İyi şeyler el değiştirir</b><small>İsrafı azalt, bütçeni koru.</small></span></div>
+        <div class="art-sticker sticker-top">YENİDEN<br />DEĞERLİ ✳</div><div class="art-sticker sticker-bottom">0 KARGO<br /><span>100% KAMPÜS</span></div>
+      </div>
+    </section>
+
+    <section class="category-section section-wrap" id="kategoriler">
+      <div class="section-heading"><div><div class="eyebrow muted-eyebrow">ARADIĞIN HER ŞEY, YAKININDA</div><h2>Bugün ne arıyorsun?</h2></div><a class="text-link" href="#ilanlar">Tüm kategoriler <span>↗</span></a></div>
+      <div class="category-grid">
+        <button class="category-card selected" data-category="Tümü"><span class="category-icon icon-all">✳</span><span class="category-name">Tümü</span><span class="category-subtitle">Hepsini keşfet</span></button>
+        <button class="category-card" data-category="Ders & Akademi"><span class="category-icon icon-academic">▤</span><span class="category-name">Ders & Akademi</span><span class="category-subtitle">Kitaplar, notlar, ekipman</span></button>
+        <button class="category-card" data-category="Teknoloji"><span class="category-icon icon-tech">⌁</span><span class="category-name">Teknoloji</span><span class="category-subtitle">Elektronik ve aksesuar</span></button>
+        <button class="category-card" data-category="Ev & Yurt"><span class="category-icon icon-home">⌂</span><span class="category-name">Ev & Yurt</span><span class="category-subtitle">Yaşam alanına gerekenler</span></button>
+        <button class="category-card" data-category="Hobi & Yaşam"><span class="category-icon icon-hobby">♧</span><span class="category-name">Hobi & Yaşam</span><span class="category-subtitle">Oyun, spor ve daha fazlası</span></button>
+      </div>
+    </section>
+
+    <section class="listings-section section-wrap" id="ilanlar">
+      <div class="section-heading listing-heading"><div><div class="eyebrow muted-eyebrow">KAMPÜSTEN SON İLANLAR</div><h2>Belki aradığın burada.</h2></div><div class="listing-controls"><label class="sort-label" for="sortSelect">Sırala</label><select id="sortSelect" aria-label="İlanları sırala"><option value="recent">En yeni</option><option value="price-asc">Fiyat: düşükten yükseğe</option><option value="price-desc">Fiyat: yüksekten düşüğe</option></select></div></div>
+      <div class="filter-row"><div class="filter-chips"><button class="filter-chip active" data-filter="all">Tüm ilanlar</button><button class="filter-chip" data-filter="urgent">⚡ Acil satılık</button><button class="filter-chip" data-filter="swap">⇄ Takas yapılabilir</button></div><span class="results-count" id="resultsCount">İlanlar yükleniyor...</span></div>
+      <div class="listing-grid" id="listingGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState"><div class="empty-icon">⌕</div><h3>Burada bir şey bulamadık.</h3><p>Aramanı değiştirmeyi veya başka bir kategori seçmeyi dene.</p><button class="button button-primary" id="clearFilters">Filtreleri temizle</button></div>
+      <div class="load-more-wrap"><button class="button button-outline" id="loadMore">Daha fazla ilan keşfet <span>↓</span></button></div>
+    </section>
+
+    <section class="swap-banner section-wrap" id="takas"><div class="swap-graphic"><span class="swap-circle swap-circle-a">▤</span><span class="swap-arrow">⇄</span><span class="swap-circle swap-circle-b">♧</span></div><div class="swap-copy"><div class="eyebrow">PARA OLMADAN DA OLUR</div><h2>Bir şeyin var, bir şeye ihtiyacın var.</h2><p>Takas alanında kullanmadığın eşyayı, aradığın başka bir şeyle değiştir. İki taraf için de kazançlı.</p></div><button class="button button-light" id="swapButton">Takas ilanlarını gör <span>↗</span></button></section>
+
+    <section class="how-section section-wrap"><div class="section-heading"><div><div class="eyebrow muted-eyebrow">KOLAY, YAKIN, PRATİK</div><h2>Üç adımda kampüs alışverişi.</h2></div></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-icon">⌕</div><h3>İhtiyacını bul</h3><p>Kategorilerde dolaş, ara ve sana uygun ilanları keşfet.</p></article><article class="step-card"><span class="step-number">02</span><div class="step-icon">☏</div><h3>Öğrenciyle anlaş</h3><p>Ürün ve buluşma noktası konusunda karşılıklı anlaşın.</p></article><article class="step-card"><span class="step-number">03</span><div class="step-icon">✳</div><h3>Kampüste teslim al</h3><p>Ürünü yüz yüze kontrol et, kargo beklemeden teslim al.</p></article></div></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark">k.</span><span>kampüs<span class="brand-period">.</span></span></a><p>İyi şeyler el değiştirir.</p><div class="footer-links"><a href="#kategoriler">Kategoriler</a><a href="#takas">Takas alanı</a><a href="#ilanlar">İlanlar</a></div><small>© 2026 Kampüs. Öğrenciler için, öğrencilerle.</small></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="listing-dialog" id="listingDialog"><button class="dialog-close" id="dialogClose" aria-label="Kapat">×</button><div id="dialogContent"></div></dialog>
+  <dialog class="simple-dialog" id="actionDialog"><button class="dialog-close" id="actionDialogClose" aria-label="Kapat">×</button><div id="actionDialogContent"></div></dialog>
+  <script src="data.js"></script><script src="app.js"></script>
+</body>
+</html>
